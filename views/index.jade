@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  h1= '数据挖掘——Apriori算法'
+  h2= '事务列表'
+  table
+    thead
+      tr
+        th= 'TID'
+        th= '内容'
+    tbody
+      tr
+        td= 1
+        td= '牛奶，面包'
+      tr
+        td= 2
+        td= '牛奶，饼干'
+      tr
+        td= 3
+        td= '饼干，面包'
+  h2= 关联规则
+  table
+    thead
+      tr
+        th= '关联规则'
+        th= '置信度（%）'
+    tbody
+      tr
+        td= '阈值'
+        td= 50
+    tbody
+      tr
+        td= '牛奶 -> 面包'
+        td= 50
+      tr
+        td= '面包 -> 饼干'
+        td= 50
+      tr
+        td= '饼干 -> 牛奶'
+        td= 50
+  h2= '添加事务'
+  ul
+    li
+      input( type='checkbox', name='transcrtion', value='1')
+      lable= '牛奶'
+    li
+      input( type="checkbox", name="transcrtion", value="2")
+      label= '面包'
+    li
+      input( type="checkbox", name="transcrtion", value="3")
+      label= '饼干'
+  input( type="button", value="添加")
+  h2= '阈值'
+  lable= '支持度：'
+  input( type="text", placeholder="支持度")
+  lable='置信度：'
+  input( type="text", placeholder="置信度")
+  h2= '添加选项'
+  input( type="text", placeholder="添加选项" value="")
+  input( type="button", value="添加")
+  h3= transcrtions
